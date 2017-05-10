@@ -5,10 +5,12 @@
 #
 # You need to be in application directory of OroCommerce
 #
-# Usage: ./url_update.sh 0c747ef5.eu.ngrok.io
+# Usage: ./url_update.sh 0c747ef5.eu.ngrok.io prod
 
-php app/console oro:config:update oro_ui.application_url http://$1
-php app/console oro:config:update oro_website.url http://$1
-php app/console oro:config:update oro_website.secure_url https://$1
+env=${2:-dev}
+
+php app/console --env=${env} oro:config:update oro_ui.application_url http://$1
+php app/console --env=${env} oro:config:update oro_website.url http://$1
+php app/console --env=${env} oro:config:update oro_website.secure_url https://$1
 
 echo "Application urls updated"
