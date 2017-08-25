@@ -1,0 +1,5 @@
+network.host: 0.0.0.0
+elasticfence.disabled: false
+elasticfence.root.password: password
+elasticfence.whitelist: ['127.0.0.1']
+discovery.zen.ping.unicast.hosts: ["elasticsearch1","elasticsearch2"]

@@ -1,0 +1,9 @@
+# Node Type: CLIENT 
+node.master: false
+node.data: false
+
+network.host: 0.0.0.0
+elasticfence.disabled: false
+elasticfence.root.password: password
+elasticfence.whitelist: ['127.0.0.1']
+discovery.zen.ping.unicast.hosts: ["172.28.1.1","172.28.1.2","172.28.1.3","172.28.1.4"]
