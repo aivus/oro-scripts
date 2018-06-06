@@ -10,18 +10,18 @@
 DB=${1}
 
 
-echo "[-] Removing caches"
+echo "[-] Removing cache"
 rm -rf app/cache/*
-echo "[\] [${DB}] dropped"
+echo "[\] Cache removed"
 
 dropdb ${DB}
 echo "[/] [${DB}] dropped"
 
 createdb ${DB}
-echo "[-] [${DB}} created"
+echo "[-] [${DB}] created"
 
 psql -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";' -d ${DB} > /dev/null
-echo "[\] [${DB}} extension uuid-ossp created"
+echo "[\] [${DB}] extension uuid-ossp created"
 
 sed -i '' "s/installed"\:".*/installed"\:" null/g" app/config/parameters.yml
 echo "[/] Flag \"installed\" flushed"
